@@ -2,17 +2,25 @@
 import { join } from 'path';
 
 // Packages
-import { BrowserWindow, app, ipcMain, IpcMainEvent } from 'electron';
+import { BrowserWindow, app, ipcMain, IpcMainEvent, screen } from 'electron';
 import isDev from 'electron-is-dev';
 
-const height = 600;
-const width = 800;
+
+
+
 
 function createWindow() {
+
+  const primaryDisplay = screen.getPrimaryDisplay()
+  const { height } = primaryDisplay.workAreaSize
+  const screenHeight = (height *90)/100
+  const screenWidth = 400;
+
+
   // Create the browser window.
   const window = new BrowserWindow({
-    width,
-    height,
+    width: screenWidth,
+    height: screenHeight,
     //  change to false to use AppBar
     frame: false,
     show: true,

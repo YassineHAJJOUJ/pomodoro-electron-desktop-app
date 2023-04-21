@@ -12,3 +12,30 @@
 .undraggable {
     -webkit-app-region: no-drag;
   }
+
+@font-face {
+  font-family: 'Poppins', sans-serif;
+  src: url('./assets/Poppins-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Poppins', sans-serif, 'bold';
+  src: url('./assets/Poppins-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Poppins', sans-serif, 'medium';
+  src: url('./assets/Poppins-Medium.ttf');
+}
+
+/* Layout style sheet */
+@layer base {
+  body, * {
+    @apply bg-primary-500 text-accent-grey scrollbar-hide
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-white
+  }
+}
+  
+  
