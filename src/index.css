@@ -37,5 +37,14 @@
     @apply text-white
   }
 }
+
+
+
+
+@layer components {
+  .progress-circle {
+    @apply w-full text-white mt-12 z-10
+  }
+}
   
   

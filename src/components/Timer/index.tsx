@@ -4,7 +4,7 @@ import ProgressCircle from './progressCircle'
 
 const Timer = () => {
   return (
-    <div className="w-auto m-6 bg-slate-800">
+    <div className="w-auto m-6 mt-14">
         <TimeTypes />
         <ProgressCircle />
     </div>
