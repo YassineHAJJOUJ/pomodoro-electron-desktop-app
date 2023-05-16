@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import AppBar from './AppBar';
 import NavBar from './components/NavBar'
-import Timer from './components/Timer';
+import Settings from './features/settings';
+import Statistics from './features/statistics';
+import DailyScreen from './features/dailyScreen';
+import { useSelector } from 'react-redux';
+import { RootState } from './store';
 
 function App() {
   console.log(window.ipcRenderer);
@@ -9,6 +13,10 @@ function App() {
   const [isOpen, setOpen] = useState(false);
   const [isSent, setSent] = useState(false);
   const [fromMain, setFromMain] = useState<string | null>(null);
+
+  const settingsIsOpen = useSelector((state: RootState) => state.settings.isOpen)
+  const statsIsOpen = useSelector((state: RootState) => state.statistics.isOpen)
+
 
   const handleToggle = () => {
     if (isOpen) {
@@ -36,17 +44,21 @@ function App() {
   }, [fromMain, isSent]);
 
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col">
       {window.Main && (
         <div className="flex-none">
           <AppBar />
         </div>
       )}
+      { settingsIsOpen? <Settings /> : null }
+      { statsIsOpen? <Statistics /> : null }
       <NavBar />
-      <Timer />
-      <div className="flex-auto">
+
+      <DailyScreen />
+      
+      
+      <div className="flex-auto mx-6 hidden">
         <div className=" flex flex-col justify-center items-center h-full space-y-4">
-          <h1 className="text-2xl text-gray-200">Vite + React + Typescript + Electron + Tailwind</h1>
           <button
             className="bg-yellow-400 py-2 px-4 rounded focus:outline-none shadow hover:bg-yellow-200"
             onClick={handleToggle}

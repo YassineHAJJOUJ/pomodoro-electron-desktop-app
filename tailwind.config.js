@@ -32,6 +32,7 @@ module.exports = {
     require('tailwindcss'),
     require('autoprefixer'),
     require('tailwind-scrollbar-hide'),
+    require('@tailwindcss/forms'),
   ],
   variants: {
     extend: {},

@@ -30,8 +30,8 @@
 
 /* Layout style sheet */
 @layer base {
-  body, * {
-    @apply bg-primary-500 text-accent-grey scrollbar-hide
+  body {
+    @apply bg-primary-500 text-accent-grey scrollbar-hide font-poppins font-normal text-sm
   }
   h1, h2, h3, h4, h5, h6 {
     @apply text-white

@@ -32,16 +32,19 @@
     "lint:fix": "eslint . --ext js,jsx,ts,tsx --fix"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
     "@vitejs/plugin-react": "^1.2.0",
     "electron-is-dev": "^2.0.0",
     "react": "^17.0.2",
     "react-circle-progress-bar": "^0.1.4",
     "react-circular-progressbar": "^2.1.0",
     "react-dom": "^17.0.2",
+    "react-redux": "^8.0.5",
     "tailwind-scrollbar-hide": "^1.1.7",
     "vite": "^2.8.6"
   },
   "devDependencies": {
+    "@tailwindcss/forms": "^0.5.3",
     "@types/node": "^17.0.22",
     "@types/react": "^17.0.41",
     "@types/react-dom": "^17.0.14",
