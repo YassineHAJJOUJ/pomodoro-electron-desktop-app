@@ -26,7 +26,7 @@ const PageModal: React.FC<PageModalProps> = ({page, children}) => {
 
 
   return (
-    <div style={{height: document.documentElement.offsetHeight+"px"}} className={ `w-full bg-primary-500 absolute top-7 left-0 z-50` }>
+    <div style={{minHeight: document.documentElement.offsetHeight+"px"}} className={ `w-full bg-primary-500 absolute top-7 left-0 z-50` }>
       <TopBar title={title} page={title} />
       {children}
     </div>
