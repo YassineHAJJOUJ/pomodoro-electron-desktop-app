@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import settingsSlice from "./features/settings/settingsSlice";
 import statisticsSlice from "./features/statistics/statisticsSlice";
+import dailyScreenSlice from "./features/dailyScreen/dailyScreenSlice";
 
 
 
@@ -8,7 +9,8 @@ import statisticsSlice from "./features/statistics/statisticsSlice";
 export const store = configureStore({
     reducer: {
         settings: settingsSlice,
-        statistics: statisticsSlice
+        statistics: statisticsSlice,
+        dailyScreen: dailyScreenSlice
     }
 })
 

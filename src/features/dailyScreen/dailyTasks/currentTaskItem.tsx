@@ -12,7 +12,7 @@ const CurrentTaskItem = () => {
             <h4 className=" text-[12px]">2/4</h4>
             <span className=" text-[12px]">2h40</span>
         </div>
-        <div className="absolute bg-accent-pink-500 text-white font-bold text-[10px] right-2 -top-2 px-1 rounded ">Current task</div>
+        <div className="absolute bg-accent-pink-500 text-white font-bold text-[10px] left-2 -top-2 px-1 rounded ">Current task</div>
     </div>
   )
 }

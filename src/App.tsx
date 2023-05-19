@@ -6,6 +6,7 @@ import Statistics from './features/statistics';
 import DailyScreen from './features/dailyScreen';
 import { useSelector } from 'react-redux';
 import { RootState } from './store';
+import AddEditTaskModal from './features/dailyScreen/dailyTasks/addEditTask';
 
 function App() {
   console.log(window.ipcRenderer);
@@ -55,7 +56,7 @@ function App() {
       <NavBar />
 
       <DailyScreen />
-      
+      <AddEditTaskModal />
       
       <div className="flex-auto mx-6 hidden">
         <div className=" flex flex-col justify-center items-center h-full space-y-4">

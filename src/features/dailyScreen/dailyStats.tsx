@@ -16,7 +16,7 @@ const DailyStats = () => {
         <div className="relative h-12">
             <div className="h-1 w-full bg-primary-400 absolute left-0 top-1"></div>
             <div className="w-[2px] h-3 bg-primary-400 absolute right-0 top-0"></div>
-            <div className=" text-primary-400 absolute bg-transparent right-0 top-5 font-bold">7h30</div>
+            <div className=" text-accent-grey absolute bg-transparent right-0 top-5">7h30</div>
             <div className="w-[2px] h-3 bg-accent-pink-500 absolute left-0 top-0"></div>
             <div className=" w-[36px] h-1 bg-accent-pink-500 absolute left-0 top-1"></div>
             <div className="w-[2px] h-3 bg-accent-pink-500 absolute left-[36px] top-1"></div>

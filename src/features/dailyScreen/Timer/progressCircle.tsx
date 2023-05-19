@@ -5,7 +5,6 @@ import 'react-circular-progressbar/dist/styles.css';
 const ProgressCircle = () => {
   return (
     <div className="relative mx-4">
-      
       <CircularProgressbarWithChildren
         value={30} 
         strokeWidth={3.1} 
@@ -45,7 +44,7 @@ const ProgressCircle = () => {
       </CircularProgressbarWithChildren>
       <div className="absolute bg-transparent bottom-[48px] z-40 w-full flex flex-col justify-center items-center">
         <h1 className="text-[56px]">21:00</h1>
-        <div className="bg-transparent text-accent-grey text-[14px] text-center">Creating the landing page of...</div>
+        <div className="bg-transparent text-accent-grey text-[14px] mt-6 text-center">Creating the landing page of...</div>
         <button className="mt-12 bg-gradient-to-b from-accent-pink-500 to-accent-pink-700 hover:from-accent-pink-700 hover:to-accent-pink-500 rounded-[4px] w-[148px] h-12 text-[18px] font-medium">Start</button>
       </div>
     </div>

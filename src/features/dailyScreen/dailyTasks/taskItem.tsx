@@ -3,7 +3,7 @@ import playIcon from '../../../assets/icons/play-icon.svg'
 
 const TaskItem = () => {
   return (
-    <div className="w-full py-3 mb-3 flex border-b-2 rounded border-primary-400 flex hover:bg-gradient-to-r hover:from-primary-500 hover:via-primary-400 hover:to-primary-500">
+    <div className="w-full py-3 mb-3 flex border-b-2 rounded border-primary-400 flex hover:bg-gradient-to-r hover:from-primary-500 hover:via-primary-400 hover:to-primary-500 pr-2">
         <div className="mr-4 flex-grow items-center cursor-pointer">
             <div className="inline">Creating the landing page of my new product </div>
             <div className="inline rounded text-[12px] px-1 py-[0px] ml-1 text-accent-pink-500 border-[1px] border-accent-pink-500">Work</div>

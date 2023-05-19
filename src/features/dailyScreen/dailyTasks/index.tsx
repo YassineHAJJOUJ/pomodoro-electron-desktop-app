@@ -2,16 +2,19 @@ import React from 'react'
 import addIcon from '../../../assets/icons/add-icon.svg'
 import TaskItem from './taskItem'
 import CurrentTaskItem from './currentTaskItem'
+import CompletedTaskItem from './completedTaskItem'
 
 const DailyTasks = () => {
   return (
     <div className="mx-6 mb-12">
         <h1 className="font-medium text-[24px] mb-4">Tasks</h1>
         <div>
+            <CompletedTaskItem />
             <TaskItem />
             <TaskItem />
             <CurrentTaskItem />
             <TaskItem />
+            <CompletedTaskItem />
             <TaskItem />
             
             <div>
