@@ -17,6 +17,7 @@ function App() {
 
   const settingsIsOpen = useSelector((state: RootState) => state.settings.isOpen)
   const statsIsOpen = useSelector((state: RootState) => state.statistics.isOpen)
+  const addEditTaskModalIsOpen = useSelector((state: RootState) => state.dailyScreen.addEditModal.open)
 
 
   const handleToggle = () => {
@@ -56,7 +57,7 @@ function App() {
       <NavBar />
 
       <DailyScreen />
-      <AddEditTaskModal />
+      {addEditTaskModalIsOpen && <AddEditTaskModal /> }
       
       <div className="flex-auto mx-6 hidden">
         <div className=" flex flex-col justify-center items-center h-full space-y-4">

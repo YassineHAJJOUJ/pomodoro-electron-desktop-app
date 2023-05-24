@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 
-type initialStateProps = {
+type initialStateTypes = {
     isOpen: Boolean
 }
 
-const initialState: initialStateProps = {
+const initialState: initialStateTypes = {
     isOpen: false
 }
 
