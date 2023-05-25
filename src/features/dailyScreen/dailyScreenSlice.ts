@@ -1,7 +1,7 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 
-export enum timerTypes {
+export enum timerEnums {
     POMODORO,
     LONG_BREAK,
     SHORT_BREAK
@@ -15,8 +15,9 @@ export type timerSequenceType = {
 }
 
 export type timerType = {
-    timerType: timerTypes,
+    timerType: timerEnums,
     currentTimeBySec: number,
+    pomodoroTimeBySec: number,
     currentTaskId: number,
     timerSequence: timerSequenceType[]
 }
@@ -86,8 +87,9 @@ export type initialStateType = {
 
 const initialState: initialStateType = {
     timer: {
-        timerType: timerTypes.POMODORO,
+        timerType: timerEnums.POMODORO,
         currentTimeBySec: 400,
+        pomodoroTimeBySec: 400,
         currentTaskId: 3,
         timerSequence: [
             {
@@ -212,15 +214,6 @@ const dailyScreenSlice = createSlice({
             state.addEditModal.content = { task: "", tag: null, estimatedPomodoros: null }
             state.addEditModal.open = true
         },
-        // openEditTaskModal: {
-        //     reducer(state, action: PayloadAction<addEditModalType>) {
-        //         const { content } = action.payload;
-        //         state.addEditModal.content = content
-        //     },
-        //     prepare(content) {
-        //         return { payload: { content }}
-        //     }
-        // },
         openEditTaskModal: (state, action) => {
             state.addEditModal.open = true
             state.addEditModal.content = action.payload
@@ -228,10 +221,13 @@ const dailyScreenSlice = createSlice({
         closeAddEditTaskModal: (state) => {
             state.addEditModal.open = false
         },
+        switchTimer: (state, action) => {
+            state.timer.timerType = action.payload
+        }
     }
 })
 
 
-export const { actionOne, actionTwo, openAddTaskModal, openEditTaskModal, closeAddEditTaskModal } = dailyScreenSlice.actions
+export const { actionOne, actionTwo, openAddTaskModal, openEditTaskModal, closeAddEditTaskModal, switchTimer } = dailyScreenSlice.actions
 export default dailyScreenSlice.reducer
 

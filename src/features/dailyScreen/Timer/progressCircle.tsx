@@ -1,8 +1,26 @@
 import React from 'react'
-import {CircularProgressbar, CircularProgressbarWithChildren} from 'react-circular-progressbar'
+import {CircularProgressbarWithChildren} from 'react-circular-progressbar'
 import 'react-circular-progressbar/dist/styles.css';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../../store';
+import { todayTaskType } from '../dailyScreenSlice';
 
 const ProgressCircle = () => {
+
+
+  const currentTask: { task: todayTaskType, index: number } | undefined = useSelector((state: RootState) => {
+    const index = state.dailyScreen.todayTasks.list.findIndex(
+      (task: todayTaskType) => task.id === state.dailyScreen.timer.currentTaskId
+    );
+    if (index !== -1) {
+      const task = state.dailyScreen.todayTasks.list[index];
+      return { task, index };
+    }
+    return undefined;
+  });
+
+  console.log('currentask', currentTask)
+
   return (
     <div className="relative mx-4">
       <CircularProgressbarWithChildren
@@ -44,8 +62,8 @@ const ProgressCircle = () => {
       </CircularProgressbarWithChildren>
       <div className="absolute bg-transparent bottom-[48px] z-40 w-full flex flex-col justify-center items-center">
         <h1 className="text-[56px]">21:00</h1>
-        <div className="bg-transparent text-accent-grey text-[14px] mt-6 text-center">Creating the landing page of...</div>
-        <button className="mt-12 bg-gradient-to-b from-accent-pink-500 to-accent-pink-700 hover:from-accent-pink-700 hover:to-accent-pink-500 rounded-[4px] w-[148px] h-12 text-[18px] font-medium">Start</button>
+        <div className="bg-transparent text-accent-grey text-[14px] mt-6 text-center">{ !!currentTask && `#${currentTask?.index+1} - ${currentTask?.task.task.substring(0,30)}...`}</div>
+        <button className="mt-12 bg-gradient-to-b from-accent-pink-500 to-accent-pink-700 hover:from-accent-pink-700 hover:to-accent-pink-500 rounded-[4px] w-[148px] h-12 text-[18px] font-medium text-white">Start</button>
       </div>
     </div>
   )

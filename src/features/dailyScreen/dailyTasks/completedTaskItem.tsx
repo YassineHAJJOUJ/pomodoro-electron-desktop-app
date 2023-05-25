@@ -6,7 +6,7 @@ import { RootState } from '../../../store'
 
 type completedTaskItemProps = {
     task: todayTaskType,
-    key: Number
+    key: number
 }
 
 const CompletedTaskItem: React.FC<completedTaskItemProps> = ({key, task}) => {
